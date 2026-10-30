@@ -4,24 +4,27 @@ Página de vendas do Arrematador 360. Fica antes do checkout da Hubla.
 
 ## Links dos vendedores
 
-Cada vendedor tem um código. O link dele é a página com `?v=codigo` no final.
+Cada link do WordPress tem um código, que é o final dele sem `matricula-360-`. O redirect aponta para a página com `?c=codigo`.
 
-Exemplo: `https://SEU-DOMINIO/?v=joao`
+Exemplo: `brunolucarelli.com.br/matricula-360-com-gnz` → `https://matricula.arrematador.com/?c=com-gnz`
+
+A tabela completa está em `redirects-wordpress.csv`.
 
 - Os botões "Quero entrar" levam para o checkout da Hubla daquele vendedor.
-- Os botões "Falar com um especialista" abrem o WhatsApp do vendedor, se ele tiver número cadastrado.
+- Os botões "Falar com um especialista" abrem o WhatsApp do comercial.
+- Sem código, os botões vão para o checkout padrão da live (`brunolucarelli.com.br/matricula-mentoria`).
 - O vendedor fica salvo por 30 dias no navegador do lead.
 - Os parâmetros `utm_*` do link são repassados para o checkout.
 
 ## Onde cadastrar
 
-Tudo fica no arquivo `vendedores.js`. Para incluir, trocar ou tirar um vendedor, edite esse arquivo e publique.
+Tudo fica no arquivo `vendedores.js`. Para incluir, trocar ou tirar um link, edite esse arquivo e publique.
 
 ## Redirects do WordPress
 
 Os links curtos que os vendedores já usam continuam iguais. Só muda o destino:
 
 - Antes: link do vendedor → checkout da Hubla
-- Agora: link do vendedor → `https://SEU-DOMINIO/?v=codigo`
+- Agora: link do vendedor → `https://matricula.arrematador.com/?c=codigo`
 
 Importante: os botões desta página apontam direto para a Hubla. Nunca aponte um link desta página para um redirect do WordPress que volta para ela, senão o lead fica preso em um loop.
