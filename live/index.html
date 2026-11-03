@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arrematador 360 · Matrícula</title>
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matricula.arrematador.com/">
+<meta property="og:site_name" content="Arrematador 360">
+<meta property="og:title" content="Arrematador 360 · Não é curso. É ecossistema.">
+<meta property="og:description" content="Faça sua matrícula com a condição da live.">
+<meta property="og:image" content="https://matricula.arrematador.com/og-360.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>html,body{margin:0;height:100%;background:#0b0d0f;color:#f2efe8;font-family:system-ui,sans-serif}body{display:grid;place-items:center;text-align:center}a{color:#ff6a1f;font-weight:700}p{color:#a4aab1}</style>
+<script src="../vendedores.js?v=3"></script>
+<script>
+/* Link da live: marca a origem "live" e leva direto para o checkout.
+   Vale o primeiro acesso: se o lead abrir depois o link de um vendedor,
+   a página de matrícula continua mandando para o checkout da live. */
+(function(){
+  var C=window.MATRICULA||{}, KEY='arr360_link', DIAS=30;
+  var q=new URLSearchParams(location.search), st=null;
+  try{st=window.localStorage}catch(e){}
+  try{
+    var s=st&&JSON.parse(st.getItem(KEY)||'null');
+    var valido=s&&Date.now()-s.t<DIAS*864e5;
+    if(!valido) st&&st.setItem(KEY,JSON.stringify({c:'live',t:Date.now()}));
+  }catch(e){}
+  var dest=C.checkoutPadrao||'';
+  try{ var u=new URL(dest); q.forEach(function(v,k){ if((/^utm_/.test(k)||k==='src'||k==='sck') && !u.searchParams.has(k)) u.searchParams.set(k,v); }); dest=u.toString(); }catch(e){}
+  window.__dest=dest;
+  if(/^https?:\/\//.test(dest)) location.replace(dest);
+})();
+</script>
+</head><body><div><p>Abrindo o checkout…</p><a id="go" href="#">Clique aqui se não abrir</a></div>
+<script>try{document.getElementById('go').href=window.__dest||'/'}catch(e){}</script>
+</body></html>
