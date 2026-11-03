@@ -12,8 +12,8 @@ A tabela completa está em `redirects-wordpress.csv`.
 
 - Os botões "Quero entrar" levam para o checkout da Hubla daquele vendedor.
 - Os botões "Falar com um especialista" abrem o WhatsApp do comercial.
-- Sem código, os botões vão para o checkout padrão da live (`brunolucarelli.com.br/matricula-mentoria`).
-- O vendedor fica salvo por 30 dias no navegador do lead.
+- Link da live: `brunolucarelli.com.br/matricula-mentoria` → `https://matricula.arrematador.com/?c=live`. Sem código ou com `?c=live`, os botões vão para o checkout da live com o cupom 360BLACK.
+- Vale o primeiro acesso. A origem (live ou vendedor) fica salva por 30 dias no navegador do lead e não é trocada por outro link depois. Para testar do zero, use `?reset=1`.
 - Os parâmetros `utm_*` do link são repassados para o checkout.
 
 ## Onde cadastrar

@@ -7,8 +7,12 @@
        https://matricula.arrematador.com/?c=com-gnz
    - A página lê o código e faz todos os botões "Quero entrar" irem
      para o checkout da Hubla daquele código, com as UTMs dele.
-   - O código fica salvo por 30 dias no navegador do lead.
-   - Quem chega sem código (live) vai para o checkout padrão.
+   - Vale o PRIMEIRO acesso: o código fica salvo por 30 dias no navegador
+     do lead e não é trocado por outro link depois.
+     Ex.: o lead entrou pela live; se depois um vendedor mandar o link dele,
+     a venda continua como live. E vice-versa.
+   - Quem chega pela live (?c=live) ou sem código vai para o checkout padrão.
+   - Para testar do zero, abra a página com ?reset=1
 
    Para incluir um link novo: copie uma linha, troque o código
    (o final do link do WordPress, sem "matricula-360-"), o vendedor,
@@ -16,8 +20,9 @@
    ========================================================= */
 
 window.MATRICULA = {
-  // Checkout padrão, origem da live, já com o cupom
-  checkoutPadrao: "https://brunolucarelli.com.br/matricula-mentoria",
+  // Checkout padrão: live, já com o cupom 360BLACK
+  // Vale para quem chega com ?c=live ou sem código nenhum
+  checkoutPadrao: "https://pay.hub.la/IZRWRBGDT9MS0Cv9UTE2?coupon=360BLACK&src=trafego-organico&utm_source=ao-vivo&utm_medium=org_live&utm_campaign=LMAR26&utm_term=mentoria_org",
   // WhatsApp dos botões "Falar com um especialista"
   whatsapp: "5519996697060",
   mensagemWhatsapp: "Quero saber mais sobre o Arrematador 360",
