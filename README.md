@@ -28,3 +28,9 @@ Os links curtos que os vendedores já usam continuam iguais. Só muda o destino:
 - Agora: link do vendedor → `https://matricula.arrematador.com/?c=codigo`
 
 Importante: os botões desta página apontam direto para a Hubla. Nunca aponte um link desta página para um redirect do WordPress que volta para ela, senão o lead fica preso em um loop.
+
+## Versões
+
+- A página principal (`index.html`) é a versão 2.
+- A versão anterior fica em `v1/` como backup: `https://matricula.arrematador.com/v1/`.
+- O endereço antigo `/v2/` redireciona para a página principal, mantendo o `?c=` e as UTMs.
