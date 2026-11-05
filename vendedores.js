@@ -20,9 +20,9 @@
    ========================================================= */
 
 window.MATRICULA = {
-  // Checkout padrão: live, já com o cupom 360BLACK
+  // Checkout padrão: live, já com o cupom BLACKVIVO
   // Vale para quem chega com ?c=live ou sem código nenhum
-  checkoutPadrao: "https://pay.hub.la/IZRWRBGDT9MS0Cv9UTE2?coupon=360BLACK&src=trafego-organico&utm_source=ao-vivo&utm_medium=org_live&utm_campaign=LMAR26&utm_term=mentoria_org",
+  checkoutPadrao: "https://pay.hub.la/IZRWRBGDT9MS0Cv9UTE2?coupon=BLACKVIVO&src=trafego-organico&utm_source=ao-vivo&utm_medium=org_live&utm_campaign=LMAR26&utm_term=mentoria_org",
   // WhatsApp dos botões "Falar com um especialista"
   whatsapp: "5519996697060",
   mensagemWhatsapp: "Quero saber mais sobre o Arrematador 360",
