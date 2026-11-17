@@ -25,6 +25,9 @@ window.MATRICULA = {
   // Vale para quem chega com ?c=live ou sem código nenhum
   checkoutPadrao: "https://pay.hubla.la/IZRWRBGDT9MS0Cv9UTE2?coupon=BLACKVIVO&src=trafego-organico&utm_source=ao-vivo&utm_medium=org_live&utm_campaign=LMAR26&utm_term=mentoria_org",
   // WhatsApp dos botões "Falar com um especialista"
+  // Planilha que registra cada acesso (URL do App da Web do Google Apps Script).
+  // Vazio = não registra nada.
+  registroUrl: "",
   whatsapp: "5519996697060",
   mensagemWhatsapp: "Quero saber mais sobre o Arrematador 360",
 
@@ -63,4 +66,25 @@ window.MATRICULA = {
     "per-ts":   { vendedor: "Thais Souza", oferta: "12M perpétuo", checkout: "https://pay.hubla.la/dde9jugwLCmFX86wtqqR?src=organico2611_T26-cktp-comercial-ts&utm_source=comercial&utm_medium=org_per&utm_campaign=2611_T26&utm_term=360_ts" },
     "per-wil":  { vendedor: "Willian", oferta: "12M perpétuo", checkout: "https://pay.hubla.la/ysSPFwynARrrjGxBVh4t?src=organico2611_T26-cktp-comercial-wil&utm_source=comercial&utm_medium=org_per&utm_campaign=2611_T26&utm_term=360_wil" },
   }
+};
+
+
+/* Registro de acessos na planilha. Manda: data, evento, código do link,
+   vendedor, oferta, checkout entregue, UTMs e um ID aleatório do navegador
+   (sem nome, e-mail ou telefone). */
+window.arr360Log=function(evento,dados){
+  try{
+    var url=(window.MATRICULA||{}).registroUrl; if(!url) return;
+    var st=null; try{st=window.localStorage}catch(e){}
+    var vid=null; try{vid=st&&st.getItem('arr360_vid'); if(!vid){vid=Math.random().toString(36).slice(2,10)+Date.now().toString(36); st&&st.setItem('arr360_vid',vid);} }catch(e){}
+    var q=new URLSearchParams(location.search), d=dados||{};
+    var body=JSON.stringify({
+      data:new Date().toISOString(), evento:evento, pagina:location.pathname,
+      codigo:d.codigo||'', vendedor:d.vendedor||'', oferta:d.oferta||'',
+      checkout:d.checkout||'', link:location.href, visitante:vid||'',
+      utm_source:q.get('utm_source')||'', utm_medium:q.get('utm_medium')||'', utm_campaign:q.get('utm_campaign')||'', src:q.get('src')||''
+    });
+    if(navigator.sendBeacon) navigator.sendBeacon(url,new Blob([body],{type:'text/plain'}));
+    else fetch(url,{method:'POST',mode:'no-cors',body:body,keepalive:true});
+  }catch(e){}
 };

@@ -272,7 +272,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 110px;color:var(--muted);
  var fl=document.getElementById('fl'); function f(){fl.classList.toggle('on',scrollY>innerHeight*.6)} addEventListener('scroll',f,{passive:true}); f();
 })();
 </script>
-<script src="vendedores.js?v=6"></script>
+<script src="vendedores.js?v=7"></script>
 <script>
 /* Leva os botões de compra para o checkout do link do vendedor. A lista fica em vendedores.js */
 (function(){
@@ -299,6 +299,11 @@ footer{border-top:1px solid var(--line);padding:26px 0 110px;color:var(--muted);
   var wa=(C.whatsapp||'').replace(/\D/g,'');
   if(wa){ var m=C.mensagemWhatsapp?'?text='+encodeURIComponent(C.mensagemWhatsapp):''; document.querySelectorAll('a[data-wa]').forEach(function(a){ a.href='https://wa.me/'+wa+m; }); }
   window.__arr360={codigo:cod||null,vendedor:item?item.vendedor:null,oferta:item?item.oferta:null,checkout:checkout};
+  var R={codigo:cod||'live',vendedor:item?item.vendedor:'Live',oferta:item?item.oferta:'',checkout:checkout};
+  if(window.arr360Log){
+    arr360Log('acesso',R);
+    document.querySelectorAll('a[data-buy]').forEach(function(a){ a.addEventListener('click',function(){ arr360Log('clique_checkout',R); }); });
+  }
 })();
 </script>
 </body></html>
