@@ -272,7 +272,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 110px;color:var(--muted);
  var fl=document.getElementById('fl'); function f(){fl.classList.toggle('on',scrollY>innerHeight*.6)} addEventListener('scroll',f,{passive:true}); f();
 })();
 </script>
-<script src="vendedores.js?v=5"></script>
+<script src="vendedores.js?v=6"></script>
 <script>
 /* Leva os botões de compra para o checkout do link do vendedor. A lista fica em vendedores.js */
 (function(){
@@ -281,12 +281,13 @@ footer{border-top:1px solid var(--line);padding:26px 0 110px;color:var(--muted);
   var cod=(q.get('c')||'').trim().toLowerCase().replace(/^matricula-360-/,'');
   var st=null; try{st=window.localStorage}catch(e){}
   if(q.get('reset')){ try{st&&st.removeItem(KEY)}catch(e){} }
-  // Vale o primeiro acesso: se já existe uma origem salva e válida, ela não é trocada
-  var salvo=null; try{var s=st&&JSON.parse(st.getItem(KEY)||'null'); if(s&&(s.c==='live'||L[s.c])&&Date.now()-s.t<DIAS*864e5) salvo=s;}catch(e){}
-  if(salvo){ cod=salvo.c; }
-  else {
-    if(!(cod==='live'||L[cod])) cod='live';  // sem código ou código desconhecido = live
+  // Vale o ÚLTIMO link aberto: um código válido no link sempre substitui o salvo
+  if(cod==='live'||L[cod]){
     try{st&&st.setItem(KEY,JSON.stringify({c:cod,t:Date.now()}))}catch(e){}
+  } else {
+    // Sem código (ou código desconhecido): usa o último link salvo nos últimos 30 dias; se não houver, live
+    var salvo=null; try{var s=st&&JSON.parse(st.getItem(KEY)||'null'); if(s&&(s.c==='live'||L[s.c])&&Date.now()-s.t<DIAS*864e5) salvo=s;}catch(e){}
+    cod=salvo?salvo.c:'live';
   }
   if(cod==='live') cod='';
   var item=cod?L[cod]:null, checkout=(item&&item.checkout)||C.checkoutPadrao;

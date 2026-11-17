@@ -11,20 +11,16 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <style>html,body{margin:0;height:100%;background:#0b0d0f;color:#f2efe8;font-family:system-ui,sans-serif}body{display:grid;place-items:center;text-align:center}a{color:#ff6a1f;font-weight:700}p{color:#a4aab1}</style>
-<script src="../vendedores.js?v=5"></script>
+<script src="../vendedores.js?v=6"></script>
 <script>
 /* Link da live: marca a origem "live" e leva direto para o checkout.
-   Vale o primeiro acesso: se o lead abrir depois o link de um vendedor,
-   a página de matrícula continua mandando para o checkout da live. */
+   Vale o último link aberto: abrir a live marca "live"; se depois o lead
+   abrir o link de um vendedor, passa a valer o vendedor. */
 (function(){
   var C=window.MATRICULA||{}, KEY='arr360_link', DIAS=30;
   var q=new URLSearchParams(location.search), st=null;
   try{st=window.localStorage}catch(e){}
-  try{
-    var s=st&&JSON.parse(st.getItem(KEY)||'null');
-    var valido=s&&Date.now()-s.t<DIAS*864e5;
-    if(!valido) st&&st.setItem(KEY,JSON.stringify({c:'live',t:Date.now()}));
-  }catch(e){}
+  try{ st&&st.setItem(KEY,JSON.stringify({c:'live',t:Date.now()})); }catch(e){}
   var dest=C.checkoutPadrao||'';
   try{ var u=new URL(dest); q.forEach(function(v,k){ if((/^utm_/.test(k)||k==='src'||k==='sck') && !u.searchParams.has(k)) u.searchParams.set(k,v); }); dest=u.toString(); }catch(e){}
   window.__dest=dest;

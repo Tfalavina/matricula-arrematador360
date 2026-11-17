@@ -7,10 +7,11 @@
        https://matricula.arrematador.com/?c=com-gnz
    - A página lê o código e faz todos os botões "Quero entrar" irem
      para o checkout da Hubla daquele código, com as UTMs dele.
-   - Vale o PRIMEIRO acesso: o código fica salvo por 30 dias no navegador
-     do lead e não é trocado por outro link depois.
-     Ex.: o lead entrou pela live; se depois um vendedor mandar o link dele,
-     a venda continua como live. E vice-versa.
+   - Vale o ÚLTIMO link aberto: cada link com código substitui o anterior.
+     Ex.: o lead entrou pela live; se depois um vendedor mandar o link dele
+     no X1, passa a valer o checkout do vendedor. E vice-versa.
+   - Se o lead voltar à página sem código, usa o último link que ele abriu
+     (guardado por 30 dias no navegador). Sem nada salvo, vai para a live.
    - Quem chega pela live (?c=live) ou sem código vai para o checkout padrão.
    - Para testar do zero, abra a página com ?reset=1
 
