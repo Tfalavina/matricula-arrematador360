@@ -65,6 +65,15 @@ window.MATRICULA = {
     "per-mn":   { vendedor: "Manu", oferta: "12M perpétuo", checkout: "https://pay.hubla.la/PylMo1abDAsvZrSjRmOZ?src=organico2611_T26-cktp-comercial-mn&utm_source=comercial&utm_medium=org_per&utm_campaign=2611_T26&utm_term=360_mn" },
     "per-ts":   { vendedor: "Thais Souza", oferta: "12M perpétuo", checkout: "https://pay.hubla.la/dde9jugwLCmFX86wtqqR?src=organico2611_T26-cktp-comercial-ts&utm_source=comercial&utm_medium=org_per&utm_campaign=2611_T26&utm_term=360_ts" },
     "per-wil":  { vendedor: "Willian", oferta: "12M perpétuo", checkout: "https://pay.hubla.la/ysSPFwynARrrjGxBVh4t?src=organico2611_T26-cktp-comercial-wil&utm_source=comercial&utm_medium=org_per&utm_campaign=2611_T26&utm_term=360_wil" },
+
+    // Arrematador App (links dentro do app, para saber de onde vem cada venda)
+    "app-popup-visitante": { vendedor: "App", oferta: "Pop-up visitante (botão Liberar)", checkout: "https://pay.hubla.la/IZRWRBGDT9MS0Cv9UTE2?coupon=BLACKVIVO&src=app-popup-visitante&utm_source=app&utm_medium=popup-visitante&utm_campaign=black2026" },
+    "app-popup-fim-teste": { vendedor: "App", oferta: "Pop-up fim do teste", checkout: "https://pay.hubla.la/IZRWRBGDT9MS0Cv9UTE2?coupon=BLACKVIVO&src=app-popup-fim-teste&utm_source=app&utm_medium=popup-fim-teste&utm_campaign=black2026" },
+    "app-banner-1": { vendedor: "App", oferta: "Banner 1 do início", checkout: "https://pay.hubla.la/IZRWRBGDT9MS0Cv9UTE2?coupon=BLACKVIVO&src=app-banner-1&utm_source=app&utm_medium=banner-1&utm_campaign=black2026" },
+    "app-banner-2": { vendedor: "App", oferta: "Banner 2 do início", checkout: "https://pay.hubla.la/IZRWRBGDT9MS0Cv9UTE2?coupon=BLACKVIVO&src=app-banner-2&utm_source=app&utm_medium=banner-2&utm_campaign=black2026" },
+    "app-banner-3": { vendedor: "App", oferta: "Banner 3 do início", checkout: "https://pay.hubla.la/IZRWRBGDT9MS0Cv9UTE2?coupon=BLACKVIVO&src=app-banner-3&utm_source=app&utm_medium=banner-3&utm_campaign=black2026" },
+    "app-menu-360": { vendedor: "App", oferta: "Menu / Oferta 360", checkout: "https://pay.hubla.la/IZRWRBGDT9MS0Cv9UTE2?coupon=BLACKVIVO&src=app-menu-360&utm_source=app&utm_medium=menu-360&utm_campaign=black2026" },
+    "app-faixa-black": { vendedor: "App", oferta: "Faixa Black do topo", checkout: "https://pay.hubla.la/IZRWRBGDT9MS0Cv9UTE2?coupon=BLACKVIVO&src=app-faixa-black&utm_source=app&utm_medium=faixa-black&utm_campaign=black2026" }
   }
 };
 
