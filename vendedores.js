@@ -41,7 +41,7 @@ window.MATRICULA = {
     "com-mn":   { vendedor: "Manu", oferta: "12M comercial", checkout: "https://pay.hubla.la/6vueKTBNaNcS5dFMKP7Z?src=organico2611_T26-ckt-comercial-mn&utm_source=comercial&utm_medium=org_com&utm_campaign=2611_T26&utm_term=360_mn" },
     "com-ts":   { vendedor: "Thais Souza", oferta: "12M comercial", checkout: "https://pay.hubla.la/WpsMMO0QGl3P142NtEtZ?src=organico2611_T26-ckt-comercial-ts&utm_source=comercial&utm_medium=org_com&utm_campaign=2611_T26&utm_term=360_ts" },
     "com-wil":  { vendedor: "Willian", oferta: "12M comercial", checkout: "https://pay.hubla.la/FJRZ3ULCVLLiQaBqeJ3O?src=organico2611_T26-ckt-comercial-wil&utm_source=comercial&utm_medium=org_com&utm_campaign=2611_T26&utm_term=360_wil" },
-    "com-mc":   { vendedor: "Michelle", oferta: "12M comercial", checkout: "https://pay.hubla.la/IZRWRBGDT9MS0Cv9UTE2?src=organico2611_T26-ckt-comercial-mc&utm_source=comercial&utm_medium=org_com&utm_campaign=2611_T26&utm_term=360_mc" },
+    "com-mc":   { vendedor: "Michelle", oferta: "12M comercial", checkout: "https://pay.hubla.la/SjTv4dU3LLON1Lh53Kpu?src=organico2611_T26-ckt-comercial-mc&utm_source=comercial&utm_medium=org_com&utm_campaign=2611_T26&utm_term=360_mc" },
 
     // 6 meses comercial
     "com2-gnz": { vendedor: "Genilza", oferta: "6M comercial", checkout: "https://pay.hubla.la/NW6pjlSn6PwOOarmMB0B?src=organico2801_T24-ckt2-comercial-gnz&utm_source=comercial&utm_medium=org_com&utm_campaign=2801_T24&utm_term=360_gnz" },
