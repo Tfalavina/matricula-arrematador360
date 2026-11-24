@@ -23,7 +23,7 @@
 window.MATRICULA = {
   // Checkout padrão: live, já com o cupom BLACKVIVO
   // Vale para quem chega com ?c=live ou sem código nenhum
-  checkoutPadrao: "https://pay.hubla.la/IZRWRBGDT9MS0Cv9UTE2?src=trafego-organico&utm_source=ao-vivo&utm_medium=org_live&utm_campaign=LMAR26&utm_term=mentoria_org",
+  checkoutPadrao: "https://pay.hubla.la/IZRWRBGDT9MS0Cv9UTE2?coupon=FIMBLACK&src=trafego-organico&utm_source=ao-vivo&utm_medium=org_live&utm_campaign=LMAR26&utm_term=mentoria_org",
   // WhatsApp dos botões "Falar com um especialista"
   // Planilha que registra cada acesso (URL do App da Web do Google Apps Script).
   // Vazio = não registra nada.
